@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apriaji</title>
+    <link rel="icon" href="img/ur-bg.png" type="image/jpg/jpeg/png">
+
+    <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+    <script src="./script.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Aktifkan box-sizing */
+        }
+
+    
+
+        /* video */
+        .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Mengatur video agar memenuhi seluruh layar dan memberikan animasi */
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0;
+  animation: fadeIn 5s ease forwards; /* Animasi delay pelan */
+}
+
+/* Animasi fade-in untuk video */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+        /* video */
+
+        .navigation {
+            width: 100%;
+            background-color: #0040b6;
+            display: none; /* Sembunyikan default */
+            position: fixed;
+            bottom: -20px;
+            left: 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .navigation {
+                display: flex; /* Tampilkan pada tablet dan mobile */
+            }
+            .navigation ul {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .navigation ul li {
+                list-style: none;
+                flex: 1;
+            }
+            .navigation ul li a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+                height: 60px; /* Tinggi yang konsisten */
+            }
+        }
+
+
+
+
+        /* icon navbar botom */
+        .navigation .icon {
+                color: white; /* Mengatur warna ikon menjadi putih */
+            }
+
+            .navigation .icon ion-icon {
+                font-size: 30px; /* Atur ukuran ikon sesuai kebutuhan */
+            }
+
+            .navigation .list-unstyled .list a .person {
+                background-color: #000;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                position: relative;
+            }
+
+            .navigation .list-unstyled .list a .person span ion-icon {
+                position: relative;
+                bottom: -10px;
+                z-index: 10;
+                left: 13px;
+                font-size: 2.3em;
+            }
+
+
+            .blur-background {
+            background-color: #ffffff99; /* Putih semi-transparan */
+            backdrop-filter: blur(6px); /* Efek blur */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .navbar-lg .w-100 .list a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.navbar-lg .w-100 .list a:hover {
+    color: #0040b6;
+    font-weight: bold;
+}
+        /* icon navbar botom */
+    </style>
+</head>
+<body>
+
+  <div class="navbar-lg fixed-top d-none d-lg-flex p-3">
+    <ul class="list-unstyled d-flex justify-content-around w-100">
+        <li class="list">
+            <a href="index.html">
+                <span class="text">Apriaji</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="deskripsi.html">
+                <span class="text">Profile</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="skill.html">
+                    <span class="text">Skills</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="experience.html">
+                <span class="text">Experience</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="kompetensi.html">
+                <span class="text">competence</span>
+            </a>
+        </li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
+    <div class="video-container">
+        <video autoplay muted loop id="background-video">
+          <source src="video/teknologi.mp4" type="video/mp4">
+        </video>
+    </div>
+
+
+
+  
+    <section class="skills" style="position: relative; top: 70px;" id="skills">
+
+        <div class="skills-content section-content text-center">
+          <h2 class="section-subtitle mt-2"><b>SKILLS</b></h2>
+          <div class="skills-toggle" data-toggle-box>
+            <button style="border-radius: 50px;" class="toggle-btn active" data-toggle-btn>Skills</button>
+            <button style="border-radius: 50px;" class="toggle-btn" data-toggle-btn>Framework</button>
+          </div>
+        </div>
+
+        
+        <div class="skills-box blur mx-3 mt-3" data-skills-box>
+
+          <ul class="skills-list" style="border: 1px solid #000; border-radius:20px;">
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">HTML5</div>
+
+                <div class="card-icon">
+                  <img src="img/html.png" alt="HTML5 logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">CSS3</div>
+
+                <div class="card-icon">
+                  <img src="img/css.jpg" alt="CSS3 logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">JavaScript</div>
+
+                <div class="card-icon">
+                  <img src="img/javascript.jpg" alt="JavaScript logo" style="position: relative; top: 8px;">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Typeit.Js</div>
+
+                <div class="card-icon">
+                  <img src="img/vanila.png" alt="typeit.js logo" style="border-radius: 20px;">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">php</div>
+
+                <div class="card-icon">
+                  <img src="img/php.png" alt="Php logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Flutter Basic</div>
+
+                <div class="card-icon">
+                  <img src="img/flutter.png" alt="Angular logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Github</div>
+
+                <div class="card-icon">
+                  <img src="img/github.jpg" alt="Github logo">
+                </div>
+              </div>
+            </li>
+
+
+
+            <!-- <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Vue</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/vue.png" alt="Vue logo">
+                </div>
+              </div>
+            </li>
+
+            
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">jQuery</div>
+
+                <div class="card-icon">
+                  <img src="img/jquery.png" alt="Jquery logo">
+                </div>
+              </div>
+            </li> 
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Firebase</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/firebase.png" alt="Firebase logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">PugJs</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/pugjs.png" alt="PugJs logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">SASS</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/sass.png" alt="SASS logo">
+                </div>
+              </div>
+            </li> -->
+
+          </ul>
+
+
+
+
+          
+          <ul class="tools-list blur mx-3 mt-3" style="border: 1px solid #000; border-radius:20px;">
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Bootstrap</div>
+
+                <div class="card-icon">
+                  <img src="img/bootstrap.jpg" alt="Bootstrap logo" style="border-radius: 10px;">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Codeigniter</div>
+
+                <div class="card-icon">
+                  <img src="img/codeigniter.png" alt="Codeigniter logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Laravel</div>
+
+                <div class="card-icon">
+                  <img src="img/laravel.jpg" alt="Laravel logo" style="border-radius: 10px;">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Jquery</div>
+
+                <div class="card-icon">
+                  <img src="img/jquery.png" alt="Jquery logo">
+                </div>
+              </div>
+            </li>
+
+           <!--  <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Npm</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/npm.png" alt="Npm logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Command Line</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/command.png" alt="Command Line logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">VS Code</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/vs-code.png" alt="VS Code logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Trello</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/trello.png" alt="Trello logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">ClickUp</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/clickup.png" alt="ClickUp logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Slack</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/slack.png" alt="Slack logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Photoshop</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/photoshop.png" alt="Photoshop logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip" style="font-weight: bold;">Adobe XD</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/adobe-xd.png" alt="Adobe XD logo">
+                </div>
+              </div>
+            </li> -->
+
+          </ul>
+
+        </div>
+
+      </section>
+    
+
+
+    <script>
+  const toggleBtns = document.querySelectorAll("[data-toggle-btn]");
+const skillsBox = document.querySelector("[data-skills-box]");
+const skillsList = document.querySelector(".skills-list");
+const toolsList = document.querySelector(".tools-list");
+
+// Awalnya hanya menampilkan skills-list dan menyembunyikan tools-list
+toolsList.style.display = "none";
+
+// Fungsi untuk mengubah tampilan sesuai dengan tombol yang diklik
+toggleBtns.forEach(button => {
+  button.addEventListener("click", function () {
+    // Hapus kelas 'active' dari semua tombol
+    toggleBtns.forEach(btn => btn.classList.remove("active"));
+    
+    // Tambahkan kelas 'active' pada tombol yang diklik
+    button.classList.add("active");
+
+    // Jika tombol 'Skills' diklik, tampilkan 'skills-list' dan sembunyikan 'tools-list'
+    if (button.textContent.trim() === "Skills") {
+      skillsList.style.display = "flex";
+      toolsList.style.display = "none";
+    }
+    // Jika tombol 'Tools' diklik, tampilkan 'tools-list' dan sembunyikan 'skills-list'
+    else if (button.textContent.trim() === "Framework") {
+      skillsList.style.display = "none";
+      toolsList.style.display = "flex";
+    }
+  });
+});
+   
+        </script>
+
+
+<style>
+
+
+
+.skills { padding-block: var(--section-padding); }
+
+.skills-content { margin-bottom: 50px; }
+
+.skills-toggle {
+  background: var(--bg-secondary);
+  position: relative;
+  width: max-content;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 100px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.tooltip {
+  position: absolute;
+  top: -25px;
+  background: var(--raw-seinna);
+  min-width: max-content;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: var(--fw-700);
+  padding: 5px 10px;
+  border-radius: var(--radius-4);
+  box-shadow: var(--shadow-1);
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-1);
+  z-index: 1;
+}
+
+.skill-card:hover .tooltip {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-social-link .tooltip {
+    --trans-x: 10px;
+
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%) translateX(var(--trans-x));
+  }
+
+  .hero-social-link:is(:hover, :focus) .tooltip {
+    --trans-x: 0;
+    opacity: 1;
+  }
+
+.skills-toggle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  width: 93px;
+  background: var(--raw-seinna);
+  border-radius: 100px;
+  transition: var(--transition-1);
+  z-index: -1;
+}
+
+.skills-toggle.active::before {
+  left: 98px;
+  width: 94px;
+}
+
+.toggle-btn {
+  color: var(--color-primary);
+  font-family: var(--ff-poppins);
+  padding: 5px 25px;
+  transition: var(--transition-1);
+}
+
+.toggle-btn.active { color: var(--white); }
+
+.skills-box.active .skills-list,
+.skills-box .tools-list { display: none; }
+
+.skills-box .skills-list,
+.skills-box .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  opacity: 0; /* Untuk mengatur animasi */
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+
+@keyframes fadeIn {
+
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+
+}
+
+.skill-card {
+  position: relative;
+  background: var(--bg-secondary);
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-12);
+  box-shadow: var(--shadow-1);
+  cursor: help;
+}
+
+.skill-card:hover .tooltip {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.skills .skills-box ul li {
+    list-style: none;
+}
+
+.skills .skills-box ul li .skill-card .card-icon img {
+    width: 70px;
+    height: 70px;
+}
+
+
+        .blur {
+            background-color: #ffffff99; /* Putih semi-transparan */
+            backdrop-filter: blur(6px); /* Efek blur */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            
+        }
+</style>
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+    
+  
+
+    <!-- NAVBAR BOTTOM -->
+    <div class="navigation d-lg-none">
+        <ul class="list-unstyled d-flex justify-content-around">
+            <li class="list">
+                <a href="deskripsi.html">
+                    <span class="icon">
+                        <ion-icon name="reader-sharp"></ion-icon>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="skill.html">
+                    <span class="icon">
+                        <ion-icon name="bulb"></ion-icon>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="index.html">
+                    <div class="person">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                    </div>
+                </a>
+            </li>
+            <li class="list">
+                <a href="experience.html">
+                    <span class="icon">
+                        <ion-icon name="briefcase-sharp"></ion-icon>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="kompetensi.html">
+                    <span class="icon">
+                        <ion-icon name="ribbon-sharp"></ion-icon>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- NAVBAR BOTTOM -->
+    <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+    <script src="./script.js"></script>
+</body>
+</html>

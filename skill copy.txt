@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apriaji</title>
+
+    <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+      
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden; /* Menghilangkan scrolling */
+        }
+
+        /* NAVIGATION STYLING */
+        /* icon navbar botom */
+        .navigation {
+            width: 100%;
+            background-color: #0040b6;
+            display: none; /* Sembunyikan default */
+            position: fixed;
+            bottom: -20px;
+            left: 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .navigation {
+                display: flex; /* Tampilkan pada tablet dan mobile */
+            }
+            .navigation ul {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .navigation ul li {
+                list-style: none;
+                flex: 1;
+            }
+            .navigation ul li a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+                height: 60px; /* Tinggi yang konsisten */
+            }
+        }
+
+
+
+
+        /* icon navbar botom */
+        .navigation .icon {
+                color: white; /* Mengatur warna ikon menjadi putih */
+            }
+
+            .navigation .icon ion-icon {
+                font-size: 30px; /* Atur ukuran ikon sesuai kebutuhan */
+            }
+
+            .navigation .list-unstyled .list a .person {
+                background-color: #000;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                position: relative;
+            }
+
+            .navigation .list-unstyled .list a .person span ion-icon {
+                position: relative;
+                bottom: -10px;
+                z-index: 10;
+                left: 13px;
+                font-size: 2.3em;
+            }
+        /* icon navbar botom */
+
+
+
+
+
+
+        /* SECTION STYLING */
+        .skills {
+            padding: 10px 15px;
+        }
+
+        .section-subtitle {
+            font-size: 25px;
+            color: #000;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .section-text {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .skills-toggle {
+            
+            padding: 5px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+            margin-bottom: 20px;
+        }
+
+        .skills .skills-box {
+            display: flex;
+           
+        }
+
+        .skills .skills-box ul {
+            margin-left: -30px;
+        }
+
+        .skills .skills-box ul li {
+            list-style: none;
+            display: grid;
+            gap: 1/4;
+        }
+
+        .toggle-btn {
+            padding: 10px 25px;
+            background-color: transparent;
+            border-radius: 50px;
+            border: navajowhite;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            background-color: #007bff;
+            color: white;
+            border-radius: 50px;
+        }
+
+        .skills-list,
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-card {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .skill-card:hover .tooltip {
+            opacity: 1;
+            transform: translateY(-10px);
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .card-icon img {
+            width: 60px;
+            height: 60px;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="skills" id="skills">
+        <div class="skills-content section-content text-center">
+            <p class="section-subtitle">SKILLS</p>
+       
+            <div class="skills-toggle">
+                <button class="toggle-btn active shadow" data-toggle-btn>Skills</button>
+                <button class="toggle-btn shadow" data-toggle-btn>Tools</button>
+            </div>
+        </div>
+
+        <div class="skills-box">
+           <ul class="skills-list">
+                <li>
+                    <div class="skill-card">
+                        <div class="tooltip">HTML5</div>
+                        <div class="card-icon">
+                            <img src="img/html.png" alt="HTML5 logo">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="skills-list">
+            <li>
+                <div class="skill-card">
+                    <div class="tooltip">HTML5</div>
+                    <div class="card-icon">
+                        <img src="img/css.jpg" alt="HTML5 logo">
+                    </div>
+                </div>
+            </li>
+        </ul>
+           <!-- SKIL PEMROGRAMAN -->
+
+
+
+           
+            <ul class="tools-list">
+                <li>
+                    <div class="skill-card">
+                        <div class="tooltip">Github</div>
+                        <div class="card-icon">
+                            <img src="img/github.jpg" style="border-radius: 10px;" alt="Git logo">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="tools-list">
+                <li>
+                    <div class="skill-card">
+                        <div class="tooltip">Github</div>
+                        <div class="card-icon">
+                            <img src="img/github.jpg" style="border-radius: 10px;" alt="Git logo">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- NAVIGATION -->
+    <div class="navigation d-lg-none">
+        <ul class="list-unstyled d-flex justify-content-around">
+            <li class="list">
+                <a href="deskripsi.html">
+                    <span class="icon">
+                        <ion-icon name="reader-sharp"></ion-icon>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="skill.html">
+                    <span class="icon">
+                        <ion-icon name="bulb"></ion-icon>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="index.html">
+                    <div class="person">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                    </div>
+                </a>
+            </li>
+            <li class="list">
+                <a href="experience.html">
+                    <span class="icon">
+                        <ion-icon name="briefcase"></ion-icon>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="kompetensi.html">
+                    <span class="icon">
+                        <ion-icon name="ribbon-sharp"></ion-icon>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Toggle between skills and tools
+            $(".toggle-btn").click(function () {
+                $(".toggle-btn").removeClass("active");
+                $(this).addClass("active");
+
+                if ($(this).text() === "Skills") {
+                    $(".skills-list").show();
+                    $(".tools-list").hide();
+                } else {
+                    $(".tools-list").show();
+                    $(".skills-list").hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apriaji</title>
+    <link rel="icon" href="img/ur-bg.png" type="image/jpg/jpeg/png">
+
+    <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+    <script src="./script.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <meta charset="utf-8">
+    <title> home</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    
+
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Aktifkan box-sizing */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* overflow: hidden;  */
+            /* Menghilangkan scrolling */
+        }
+
+     
+        /* video */
+
+        .navigation {
+            width: 100%;
+            background-color: #0040b6;
+            display: none; /* Sembunyikan default */
+            position: fixed;
+            bottom: -20px;
+            left: 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .navigation {
+                display: flex; /* Tampilkan pada tablet dan mobile */
+            }
+            .navigation ul {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .navigation ul li {
+                list-style: none;
+                flex: 1;
+            }
+            .navigation ul li a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+                height: 60px; /* Tinggi yang konsisten */
+            }
+        }
+
+
+
+
+        /* icon navbar botom */
+        .navigation .icon {
+                color: white; /* Mengatur warna ikon menjadi putih */
+            }
+
+            .navigation .icon ion-icon {
+                font-size: 30px; /* Atur ukuran ikon sesuai kebutuhan */
+            }
+
+            .navigation .list-unstyled .list a .person {
+                background-color: #000;             
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                position: relative;
+            }
+
+            .navigation .list-unstyled .list a .person span ion-icon {
+                position: relative;
+                bottom: -10px;
+                z-index: 10;
+                left: 13px;
+                font-size: 2.3em;
+            }
+
+            /* element */
+            .mb-5 .container .row .card-wrapper .card .card-description .d-flex .mt-2 {
+                color: black;
+            }
+            /* element */
+
+
+            /* .blur-background {
+            background-color: #ffffff99; 
+            backdrop-filter: blur(6px); 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+        } */
+        /* icon navbar botom */
+
+
+
+        
+.wrapper-grey .container .fixed-top-filters .mb-2 .btn:hover {
+    background-color: black;
+    color: #fffb00;
+}
+
+
+/* Styling for fixed filter buttons and search bar */
+.fixed-top-filters {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: transparent; /* Putih semi-transparan */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+}
+
+.mb-5 .container .fixed-top-filters.scrolled {
+    background-color: #ffffff99; 
+    backdrop-filter: blur(6px); 
+}
+
+
+/* Adjust margin-top to compensate for fixed filters */
+.wrapper-grey {
+    position: relative;
+    top: 110px;/* Adjust according to your layout */
+}
+
+.card-wrapper {
+    display: none; /* Initially hidden */
+}
+
+.card-wrapper.show {
+    display: block; /* Show cards when filtered */
+}
+
+input#search {
+    max-width: 300px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+   
+h1, h2, h3 {
+  font-family: Raleway, Helvetica, sans-serif;
+}
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+
+.avatar {
+  width: 30px;
+  border-radius: 50%;
+}
+.avatar-bordered {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+.avatar-large {
+  width: 50px;
+}
+
+.card {
+  height: 250px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 22px;
+}
+.card-description p {
+  font-size: 15px;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}
+.features img {
+  width: 100px;
+}
+.features h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.features p {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+
+
+
+.mb-5 .container .row .card-wrapper .card .card-description .d-flex a:hover {
+    color: red;
+}
+
+.navbar-lg .w-100 .list a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.navbar-lg .w-100 .list a:hover {
+    color: #0040b6;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+
+    <!-- <div class="video-container">
+        <video autoplay muted loop id="background-video">
+          <source src="video/teknologi.mp4" type="video/mp4">
+        </video>
+    </div> -->
+    
+
+
+    
+
+
+
+
+
+
+
+    <div class="wrapper-grey mb-5">
+        <div class="container">
+            <!-- Fixed Filter Buttons and Search Bar -->
+            <div class="fixed-top-filters" style="backdrop-filter: blur(6px); background-color: #ffffff;">
+                <h2 class="text-center mt-4">SERTIFIKAT KOMPETENSI</h2>
+                <div class="container" style="position: relative; top: -20px;">
+                    <div class="row d-flex align-items-center">
+                        <!-- Search Input -->
+                        <div class="col-12 col-md-6 mb-2 mb-md-0 text-center text-md-start">
+                            <input type="text" id="search" class="form-control" placeholder="Cari Nama Sertifikat..." style="position: relative; top: 0px;">
+                        </div>
+                        <!-- Buttons -->
+                        <div class="col-12 col-md-6 text-center text-md-end">
+                            <button id="btn-kompeten" class="btn btn-primary me-2" style="border-radius: 20px;">Kompeten</button>
+                            <button id="btn-partisipan" class="btn btn-primary" style="border-radius: 20px;">Partisipan</button>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="navbar-lg fixed-top d-none d-lg-flex" style="position: relative; top: 0px;">
+                    <ul class="list-unstyled d-flex justify-content-around w-100">
+                        <li class="list">
+                            <a href="index.html">
+                                <span class="text">Apriaji</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="deskripsi.html">
+                                <span class="text">Profile</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="skill.html">
+                                    <span class="text">Skills</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="experience.html">
+                                <span class="text">Experience</span>
+                            </a>
+                        </li>
+                        <li class="list">
+                            <a href="kompetensi.html">
+                                <span class="text">competence</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Card Elements -->
+            <div class="row" id="card-container" style="position: relative; top: 50px;">
+                <!-- Kolom 1 -->
+                <div class="col-12 col-sm-4 card-wrapper" data-category="kompeten">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/sql-analis.jpg');">
+                        <div class="card-category text-dark mt-5">Kompeten</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1bzC55josnAe8e3SeicU-yOBTZo_3Su_d/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View Basic SQL</a>
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 20px;" src="sertifikat/logo/kru.jpg">
+                    </div>
+                </div>
+    
+                <div class="col-12 col-sm-4 card-wrapper" data-category="kompeten">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/Flutter-dasar.jpg');">
+                        <div class="card-category text-dark mt-5">Kompeten</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1gTnQGb15FiFR9kHfm31Av2tktNO_vRB8/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View BASIC DART</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 20px;" src="sertifikat/logo/flutter.png">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 card-wrapper" data-category="kompeten">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/bnsp-2024.png');">
+                        <div class="card-category text-dark mt-5">Kompeten</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1R1pMWPp8mh189GHvxFrzZXgtiDYXPgZ5/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View BNSP 2024</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 20px;" src="sertifikat/logo/bnsp.png">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Kolom 2 -->
+            <div class="row" id="card-container" style="position: relative; top: 50px;">
+                <div class="col-12 col-sm-4 card-wrapper" data-category="partisipan">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/cakap-digital.png');">
+                        <div class="card-category text-dark mt-5">Partisipan</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1pg0wTaEcuEPEcR2LigFqr-W92QWRVHdy/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View WEBINAR E-COMMERSE</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 40px; border-radius: 10px;" src="sertifikat/logo/siber-kreasi.png">
+                    </div>
+                </div>
+    
+                <div class="col-12 col-sm-4 card-wrapper" data-category="partisipan">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/webinar-edsperd.png');">
+                        <div class="card-category text-dark mt-5">Partisipan</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/17RRc80huKrteTRWO8IqW5lvSUABlLRV1/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View WEBINAR REACT JS</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 20px;" src="sertifikat/logo/edsperd.jpg">
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-4 card-wrapper" data-category="kompeten">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/backend.png');">
+                        <div class="card-category text-dark mt-5">Kompeten</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1hljRldq3QHNKrHf87yltGpHoKHMherKX/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View Backend Web</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 30px;" src="sertifikat/logo/devtown.png">
+                    </div>
+                </div>
+                
+                <div class="col-12 col-sm-4 card-wrapper" data-category="kompeten">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/frontend.png');">
+                        <div class="card-category text-dark mt-5">Kompeten</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1HgoYcIdIkwPXfJDJwQ3IgT6DyalbN5I8/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View Frontend Web</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 30px;" src="sertifikat/logo/google.png">
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="col-12 col-sm-4 card-wrapper" data-category="partisipan">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/webinar-golang.png');">
+                        <div class="card-category text-dark mt-5">Partisipan</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1QVrdU0o4cw2JQrvOR7iIep-HbAo4WyP7/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View Webinar Golang</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 30px;" src="sertifikat/logo/edsperd.jpg">
+                    </div>
+                </div>
+                
+                <div class="col-12 col-sm-4 card-wrapper" data-category="kompeten">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/digitalent-2023.png');">
+                        <div class="card-category text-dark mt-5">Kompeten</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1K0qvL_aG43kRff4MCdc1MBqX_YquJAGJ/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View Digitalent 2023</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 30px;" src="sertifikat/logo/digital.png">
+                    </div>
+                </div>
+                
+                <div class="col-12 col-sm-4 card-wrapper" data-category="kompeten">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/digitalent-2024.png');">
+                        <div class="card-category text-dark mt-5">Kompeten</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1zDLOEF9-fkMv_27q2tOYgQzdvffk_tus/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View Digitalent 2024</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 30px;" src="sertifikat/logo/digital.png">
+                    </div>
+                </div>
+                
+                <div class="col-12 col-sm-4 card-wrapper" data-category="kompeten">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/bnsp.png');">
+                        <div class="card-category text-dark mt-5">Kompeten</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1_r-7QfnBzk3ikojP4UCO-rg_cPt61I9a/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View BNSP 2023</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 20px;" src="sertifikat/logo/bnsp.png">
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-4 card-wrapper" data-category="partisipan">
+                    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('sertifikat/dicoding.png');">
+                        <div class="card-category text-dark mt-5">Partisipan</div>
+                        <div class="card-description text-dark">
+                            
+                            <div class="d-flex justify-content-between">
+                                <a href="https://drive.google.com/file/d/1aw1yKdpjmZNhawfBHWeqzi1Ccx6ZHsoy/view?usp=sharing" class="mt-2" style="font-size: 15px; font-weight: bold;">View Dicoding</a>
+                                
+                            </div>
+                        </div>
+                        <img class="card-user img-fluid" style="height: 30px; border-radius: 20px;" src="sertifikat/logo/dicoding-logo.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    // Menampilkan semua elemen secara default saat halaman dimuat
+    showAllCards();
+});
+
+function showAllCards() {
+    let cards = document.querySelectorAll('.card-wrapper');
+    cards.forEach(function(card) {
+        card.style.display = 'block'; // Tampilkan semua elemen
+    });
+}
+
+document.getElementById('btn-kompeten').addEventListener('click', function() {
+    filterCardsByCategory('kompeten');
+});
+
+document.getElementById('btn-partisipan').addEventListener('click', function() {
+    filterCardsByCategory('partisipan');
+});
+
+function filterCardsByCategory(category) {
+    let cards = document.querySelectorAll('.card-wrapper');
+    cards.forEach(function(card) {
+        if (card.getAttribute('data-category') === category) {
+            card.style.display = 'block'; // Tampilkan elemen yang cocok
+        } else {
+            card.style.display = 'none';  // Sembunyikan elemen yang tidak cocok
+        }
+    });
+}
+
+// Menambahkan fungsi pencarian berdasarkan nama sertifikat
+document.getElementById('search').addEventListener('keyup', function() {
+    let searchValue = this.value.toLowerCase();
+    let cards = document.querySelectorAll('.card-wrapper');
+    
+    cards.forEach(function(card) {
+        let cardText = card.querySelector('.card-description a').innerText.toLowerCase();
+        if (cardText.includes(searchValue)) {
+            card.style.display = 'block'; // Tampilkan jika sesuai pencarian
+        } else {
+            card.style.display = 'none'; // Sembunyikan jika tidak sesuai
+        }
+    });
+});
+
+        </script>
+
+
+
+
+    
+
+<br>
+<br>
+<br>
+<br>
+
+    <footer class="text-center">
+        <p style="font-size: 20px;">&copy; All Right Reserved <span id="currentYear"></span></p>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+   
+   
+   
+
+    
+    
+
+  <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+
+    <!-- NAVBAR BOTTOM -->
+    <div class="navigation d-lg-none">
+        <ul class="list-unstyled d-flex justify-content-around">
+            <li class="list">
+                <a href="deskripsi.html">
+                    <span class="icon">
+                        <ion-icon name="reader-sharp"></ion-icon>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="skill.html">
+                    <span class="icon">
+                        <ion-icon name="bulb"></ion-icon>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="index.html">
+                    <div class="person">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                    </div>
+                </a>
+            </li>
+            <li class="list">
+                <a href="experience.html">
+                    <span class="icon">
+                        <ion-icon name="briefcase-sharp"></ion-icon>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="kompetensi.html">
+                    <span class="icon">
+                        <ion-icon name="ribbon-sharp"></ion-icon>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- NAVBAR BOTTOM -->
+    <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+    <script src="./script.js"></script>
+</body>
+</html>
